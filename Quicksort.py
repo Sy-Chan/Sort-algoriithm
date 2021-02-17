@@ -3,14 +3,14 @@ class QSort:
         self.low = 0
         self.arr = arr
         self.high = len(self.arr)-1
-        self.QSort = self.sort(self.low, self.high, self.arr)#Call
+        self.sort = self.recurve(self.low, self.high, self.arr)#Call
         
     
     def recurve(self, low, high, arr):
         if low < high:
             pi = self.quick(low, high, arr)
-            self.sort(low, pi-1, arr)
-            self.sort(pi+1, high, arr)
+            self.recurve(low, pi-1, arr)
+            self.recurve(pi+1, high, arr)
             
             return arr
         
@@ -25,6 +25,6 @@ class QSort:
         return i+1
 
 
-#test    
+    
 xyz = [10,30,80,90,40,50,70]
 print(QSort(xyz).QSort)
