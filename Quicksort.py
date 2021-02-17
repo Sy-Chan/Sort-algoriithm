@@ -3,18 +3,19 @@ class QSort:
         self.low = 0
         self.arr = arr
         self.high = len(self.arr)-1
-        self.sort = self.recurve(self.low, self.high, self.arr)#Call
+        #call the properties to get the result
+        self.sort = self.recurve(self.low, self.high, self.arr)
         
-    
+    #recurve to arrnge the list
     def recurve(self, low, high, arr):
         if low < high:
-            pi = self.quick(low, high, arr)
+            pi = self.part(low, high, arr)
             self.recurve(low, pi-1, arr)
             self.recurve(pi+1, high, arr)
             
             return arr
-        
-    def quick(self, low, high, arr):
+   #divide the list into parts by index     
+    def part(self, low, high, arr):
         i = low-1
         for j in range(low, high):
             if arr[j] < arr[high]:
