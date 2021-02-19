@@ -3,7 +3,7 @@ class QSort:
         self.low = 0
         self.arr = arr
         self.high = len(self.arr)-1
-        #call the properties to get the result
+        #call 'self.sort' the properties to get the result
         self.sort = self.recurve(self.low, self.high, self.arr)
         
     #recurve to arrnge the list
